@@ -76,7 +76,7 @@ export class MainviewComponent implements OnInit {
   ngOnInit(): void {
     this.isloading=true;
     //for localhost try assets/earnings_calendar.csv
-    this.httpclient.get('https://github.com/swap2896/stock-market-basic/blob/main/src/assets/earnings_calendar.csv', {responseType: 'text'})
+    this.httpclient.get('assets/earnings_calendar.csv', {responseType: 'text'})
     .subscribe(
         (data:any) => {
             let result=data.split('\r\n');
