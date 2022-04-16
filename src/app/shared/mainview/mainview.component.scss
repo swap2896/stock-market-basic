@@ -1,0 +1,113 @@
+// ::ng-deep .mat-input-wrapper{
+//     width:1000px !important;
+//   }
+
+
+
+   /* Style the search box */
+#mySearch {
+    width: 70%;
+    font-size: 18px;
+    padding-top: 11px;
+    // border: 1px solid #ddd;
+  }
+  
+  /* Style the navigation menu */
+  #myMenu {
+    list-style-type: none;
+    padding-top: 60px;
+    margin: 20px;
+  }
+  
+  /* Style the navigation links */
+  #myMenu li a {
+    padding-left: 55px;
+    text-decoration: none;
+    color: black;
+    // display: block
+  }
+a{
+    color: white;
+}
+  a:hover{
+    color:#e91e63
+  }
+  
+
+
+  mat-list-option:hover{
+      color:#e91e63
+  }
+
+  table {
+    width: 100%;
+    height:auto;
+    /* height: auto; */
+  }
+    
+    th.mat-sort-header-sorted {
+      color: black;
+    }
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+    }
+    
+    // .column-spacing{
+    //   color:;
+    // }
+    .data-spacing{
+      padding: 5px; 
+    }
+    .header-spacing{
+      /* padding: 10px; */
+      color:black;
+      background-color: #e91e63;
+      max-height: 60px;
+      min-height: 60px;
+      /* padding: 10px;  */
+    }
+    ul li {
+      list-style: none;
+    }
+  
+    .unstyled-button {
+      border: none;
+      padding-top: 10px;
+      background: none;
+      /* background-color: lightblue; */
+    }
+    mat-sidenav-container, mat-sidenav-content
+    {
+    overflow: initial
+    }
+
+   
+  .styled-button{
+    border: none;
+    /* padding: 0; */
+    max-height: 30px;
+    min-height: 30px;
+    background: none;
+    /* margin-top: 50px; */
+  }
+  button:focus, button:active:focus, button.active:focus {
+    outline: none !important;
+    outline-style: none !important;
+  }
+ 
+  li{
+    list-style-type: none;
+  }
+  .material-icons {
+    display: inline-flex;
+    vertical-align: middle;
+    position: relative;
+    padding-top:-5px;
+    /* background-color:white; */
+    /* color:black; */
+  }
+
+
+
+  

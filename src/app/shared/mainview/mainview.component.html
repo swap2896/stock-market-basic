@@ -1,0 +1,66 @@
+  <!-- <mat-form-field> -->
+    <mat-spinner   style="margin:0 auto; top:70px;color:#e91e63" 
+mode="indeterminate" *ngIf="isloading"></mat-spinner>
+    <div class="container" style="padding: 20px;">
+      <!-- <mat-label><mat-icon style="size: 200px;">search</mat-icon></mat-label> -->
+      <!-- <input id="mySearch" placeholder="What are you looking for today?" (keyup)="applyFilter($event)" >
+      <mat-selection-list role="list" [multiple]="false" style="border: solid 1px white; width: 70%;" *ngIf="companies.length>0">
+        <mat-list-option role="listitem" *ngFor="let company of companies"><a [routerLink]="['company/', company[1]]">{{company[0]}}
+           <span style="font-size: small;"> ({{company[1]}})</span></a></mat-list-option>
+      </mat-selection-list> -->
+      <!-- <br><br> -->
+      <mat-toolbar class="header-spacing">
+        <mat-toolbar-row>
+          <span style="color: white;">Company Earnings</span>
+          <div fxFlex fxLayout="row" fxLayoutAlign="flex-end flex-vert-center" >
+            <ul fxLayout="row" fxLayoutGap="50px">
+              <li>
+                <mat-form-field style="color: white;">
+                  <mat-label style="color: white;">Search<mat-icon>search</mat-icon></mat-label>
+                  <input style="color: white;" matInput (keyup)="applysearchFilter($event)" placeholder="Enter a String to search. Ex. zcc">
+                </mat-form-field>
+              </li>
+            </ul>
+            </div>
+          </mat-toolbar-row>
+          </mat-toolbar>
+      <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8, table-row">
+
+        <ng-container matColumnDef="Symbol">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-spacing">Symbol</th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;"><a [routerLink]="['company/', element.Symbol]">{{element.Symbol}}</a> </td>
+          </ng-container>
+    
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-spacing">Name</th>
+          <td mat-cell *matCellDef="let element"><a [routerLink]="['company/', element.Symbol]">{{element.Name}}</a></td>
+        </ng-container>
+
+        <ng-container matColumnDef="ReportDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-spacing">ReportDate</th>
+          <td mat-cell *matCellDef="let element">{{element.ReportDate}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="FiscalDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-spacing">FiscalDate</th>
+          <td mat-cell *matCellDef="let element">{{element.FiscalDate}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Estimate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-spacing">Estimate</th>
+          <td mat-cell *matCellDef="let element">{{element.Estimate}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Currency">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="column-spacing">Currency</th>
+          <td mat-cell *matCellDef="let element">{{element.Currency}}</td>
+        </ng-container>
+        
+      
+             
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[8, 25, 50, 100]"></mat-paginator>
+
+      </div>

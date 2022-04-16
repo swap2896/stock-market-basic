@@ -1,0 +1,41 @@
+<br>
+<mat-spinner   style="margin:0 auto; top:70px;color:#e91e63" 
+mode="indeterminate" *ngIf="isloading"></mat-spinner>
+<div style="width: 100%; padding:10px" *ngIf="!isloading && date_keys.length>0">
+    <mat-card class="example-card card">
+        <mat-card-title>{{company_detail.Name}} ({{company_detail.Symbol}})</mat-card-title>
+        <mat-card-subtitle>{{company_detail.symbol}}</mat-card-subtitle>
+      <mat-card-content>
+        <p class="detail-content__rating" style="margin-left: auto;
+        margin-right: auto;">AssetType: &nbsp;{{company_detail.AssetType}}</p>
+        <mat-chip-list>
+          <mat-chip style="color: white; background-color:#e91e63 ;">Sector:{{company_detail.Sector}}</mat-chip>
+          <mat-chip style="color: white; background-color:#e91e63 ;">Exchange:{{company_detail.Exchange}}</mat-chip>
+          <mat-chip style="color: white; background-color:#e91e63 ;">Currency:{{company_detail.Currency}}</mat-chip>
+
+
+        </mat-chip-list>
+          <mat-divider></mat-divider><br><br>
+       <app-company-stock-chart [date_keys]="date_keys" [closed_data]="closed_data" [open_data]="open_data" 
+       [high_data]="high_data" [low_data]="low_data"  *ngIf="closed_data.length>0"></app-company-stock-chart>
+        <mat-divider></mat-divider><br>
+        
+      </mat-card-content>     
+    </mat-card>
+    <mat-card class="example-card card">
+        <mat-card-content>
+        <p><br>Description: &nbsp;{{company_detail.Description}}</p>
+         <mat-divider></mat-divider><br>
+        <p>Industry: {{company_detail.Industry}}</p>
+        <p>Address: {{company_detail.Address}}</p>
+        <p>Market Capitalization: {{company_detail.MarketCapitalization}}</p>
+        <p>EBITDA: {{company_detail.EBITDA}}</p>
+        <p>PE Ratio: {{company_detail.PERatio}}</p>
+        <p>Dividend Per Share: {{company_detail.DividendPerShare}}</p>
+        <p>Analyst Target Price: {{company_detail.AnalystTargetPrice}}</p>
+    </mat-card-content>
+    </mat-card>
+    </div>
+    <div *ngIf="!isloading && date_keys.length==0" >
+        No Data Available ! Thank you for using Alpha Vantage API! You have reached daily limit.
+    </div>
