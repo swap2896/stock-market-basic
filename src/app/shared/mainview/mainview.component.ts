@@ -79,10 +79,8 @@ export class MainviewComponent implements OnInit {
     this.httpclient.get('assets/earnings_calendar.csv', {responseType: 'text'})
     .subscribe(
         (data:any) => {
-          console.log(data)
             let result=data.split('\n');
             this.all_companies_data=[]
-            console.log(result)
             for(var i=0;i<result.length;i++)
             {
             let company=new company_data;
@@ -96,9 +94,7 @@ export class MainviewComponent implements OnInit {
             company.Currency=comp[5]
             this.all_companies_data.push(company)
             }
-            console.log(this.all_companies_data)
             this.dataSource=new MatTableDataSource(this.all_companies_data)
-            console.log(this.dataSource)
             this.dataSource.sort = this.sort;
             this.dataSource.paginator=this.paginator;
             this.isloading=false;

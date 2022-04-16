@@ -27,8 +27,6 @@ export class CompanyStockChartComponent implements OnInit {
   chartCallback: any;
  
   ngOnInit(): void {
-      console.log(this.date_keys)
-      console.log(this.closed_data)
     this.chartOptions={
       chart: {
         type: 'line'
