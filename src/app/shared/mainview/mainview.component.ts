@@ -80,7 +80,7 @@ export class MainviewComponent implements OnInit {
     .subscribe(
         (data:any) => {
           console.log(data)
-            let result=data.split('\r\n');
+            let result=data.split('\n');
             this.all_companies_data=[]
             console.log(result)
             for(var i=0;i<result.length;i++)
