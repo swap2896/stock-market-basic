@@ -25,7 +25,7 @@ export class MainviewComponent implements OnInit {
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   public records: any[] = [];
   isloading:boolean=false;
-  displayedColumns: string[] = ['Symbol','Name','ReportDate','FiscalDate','Estimate','Currency'];
+  displayedColumns: string[] = ['Symbol','Name','Estimate','Currency'];
   // paginator: MatPaginator | null;
   constructor(private service:BackendService,private snackbar:MatSnackBar,private httpclient: HttpClient) { }
   companies:any=[]
